@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionSurcusalesApp.Views.EditSucursalPage"
+             Title="Editar Sucursal">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="30">
+
+            <Label Text="Nombre" FontAttributes="Bold"/>
+            <Entry x:Name="NombreEntry" Placeholder="Nombre de la sucursal"/>
+
+            <Label Text="Dirección" FontAttributes="Bold"/>
+            <Entry x:Name="DireccionEntry" Placeholder="Dirección"/>
+
+            <Label Text="Teléfono" FontAttributes="Bold"/>
+            <Entry x:Name="TelefonoEntry" Placeholder="Teléfono"/>
+
+            <Label Text="Correo Electrónico" FontAttributes="Bold"/>
+            <Entry x:Name="CorreoElectronicoEntry" Placeholder="Correo Electrónico"/>
+
+            <Label Text="Horario de Atención" FontAttributes="Bold"/>
+            <Entry x:Name="HorarioAtencionEntry" Placeholder="Horario de Atención"/>
+
+            <Label Text="Gerente de la Sucursal" FontAttributes="Bold"/>
+            <Entry x:Name="GerenteSucursalEntry" Placeholder="Gerente de la Sucursal"/>
+
+            <Label Text="Moneda" FontAttributes="Bold"/>
+            <Picker x:Name="MonedaPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>USD</x:String>
+                        <x:String>COP</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Guardar Cambios" Clicked="OnSaveClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

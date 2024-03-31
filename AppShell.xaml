@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GestionSurcusalesApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GestionSurcusalesApp"
+    xmlns:views="clr-namespace:GestionSurcusalesApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="GestionSurcusalesApp">
+   
+
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="LoginPage" />
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems"   >
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate views:HomePage }"></ShellContent>
+        <ShellContent Title="User" ContentTemplate="{DataTemplate views:UserPage }"></ShellContent>
+    </FlyoutItem>
+
+</Shell>

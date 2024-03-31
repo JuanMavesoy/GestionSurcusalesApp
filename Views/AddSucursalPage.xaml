@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionSurcusalesApp.Views.AddSucursalPage"
+             Title="Crear Sucursal">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="30">
+            <Entry x:Name="nombreEntry"
+                   Text="{Binding Nombre, Mode=TwoWay}" 
+                   Placeholder="Nombre de la sucursal"/>
+            <Entry x:Name="direccionEntry"
+                   Text="{Binding Direccion, Mode=TwoWay}"
+                   Placeholder="Dirección"/>
+            <Entry x:Name="telefonoEntry"
+                   Text="{Binding Telefono, Mode=TwoWay}"
+                   Placeholder="Teléfono"
+                   Keyboard="Telephone"/>
+            <Entry x:Name="correoElectronicoEntry"
+                   Text="{Binding CorreoElectronico, Mode=TwoWay}"
+                   Placeholder="Correo Electrónico"
+                   Keyboard="Email"/>
+            <Entry x:Name="horarioAtencionEntry"
+                   Text="{Binding HorarioAtencion, Mode=TwoWay}"
+                   Placeholder="Horario de Atención"/>
+            <Entry x:Name="gerenteSucursalEntry"
+                   Text="{Binding GerenteSucursal, Mode=TwoWay}"
+                   Placeholder="Gerente de la Sucursal"/>
+            <Picker x:Name="monedaPicker"
+                    Title="Seleccione una Moneda">
+                <Picker.ItemsSource Text="{Binding Moneda, Mode=TwoWay}">
+                    <x:Array Type="{x:Type x:String}" >
+                        <x:String>USD - Dólar estadounidense</x:String>
+                        <x:String>COP - Peso colombiano</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="Guardar"
+                    Command="{Binding SaveSucursalCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
